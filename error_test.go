@@ -1,7 +1,7 @@
 package error
 
 import (
-	"anchytec/error/constant/mysql"
+	"ts-error/err_code/mysql"
 	"fmt"
 	"testing"
 )

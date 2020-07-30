@@ -1,5 +1,7 @@
 package error
 
-import "anchytec/error/constant"
+import (
+	"ts-error/err_code"
+)
 
-var errMsgTrade = map[constant.ErrCodeSub]string{}
+var errMsgTrade = map[err_code.ErrCodeSub]string{}

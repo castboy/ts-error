@@ -1,9 +1,9 @@
 package kafka
 
-import "anchytec/error/constant"
+import "ts-error/err_code"
 
-type KafkaOpType constant.ErrCodeSub
-type KafkaOpObj constant.ErrCodeSubSub
+type KafkaOpType err_code.ErrCodeSub
+type KafkaOpObj err_code.ErrCodeSubSub
 
 const (
 	Produce KafkaOpType = iota + 1

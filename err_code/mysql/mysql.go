@@ -1,11 +1,11 @@
 package mysql
 
 import (
-	"anchytec/error/constant"
+	"ts-error/err_code"
 )
 
-type MysqlOpType constant.ErrCodeSub
-type MysqlOpObj constant.ErrCodeSubSub
+type MysqlOpType err_code.ErrCodeSub
+type MysqlOpObj err_code.ErrCodeSubSub
 
 const (
 	Insert MysqlOpType = iota + 1

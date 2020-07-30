@@ -1,8 +1,8 @@
 package error
 
 import (
-	"anchytec/error/constant"
-	"anchytec/error/constant/system"
+	"ts-error/err_code"
+	"ts-error/err_code/system"
 )
 
 type SystemErrer struct {
@@ -11,7 +11,7 @@ type SystemErrer struct {
 
 func NewSystemErrer(errOrigin error, Type system.Type) *SystemErrer {
 	base := newErr()
-	base.init(errOrigin, constant.SystemErr, constant.ErrCodeSub(Type), constant.ErrCodeSubSub(0))
+	base.init(errOrigin, err_code.SystemErr, err_code.ErrCodeSub(Type), err_code.ErrCodeSubSub(0))
 
 	return &SystemErrer{base}
 }

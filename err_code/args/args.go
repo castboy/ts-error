@@ -1,8 +1,8 @@
 package args
 
-import "anchytec/error/constant"
+import "ts-error/err_code"
 
-type ArgsType constant.ErrCodeSub
+type ArgsType err_code.ErrCodeSub
 
 const (
 	Trade ArgsType = iota + 1

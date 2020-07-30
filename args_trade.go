@@ -1,8 +1,8 @@
 package error
 
 import (
-	"anchytec/error/constant"
-	"anchytec/error/constant/args"
+	"ts-error/err_code"
+	"ts-error/err_code/args"
 )
 
 type TradeArgsErrer struct {
@@ -11,7 +11,7 @@ type TradeArgsErrer struct {
 
 func NewTradeArgsErrer(errOrigin error, argsType args.ArgsType, tradeArg args.TradeArg, comment ...Comment) *TradeArgsErrer {
 	base := newErr()
-	base.init(errOrigin, constant.MysqlErr, constant.ErrCodeSub(argsType), constant.ErrCodeSubSub(tradeArg), comment...)
+	base.init(errOrigin, err_code.MysqlErr, err_code.ErrCodeSub(argsType), err_code.ErrCodeSubSub(tradeArg), comment...)
 
 	return &TradeArgsErrer{base}
 }

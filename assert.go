@@ -1,8 +1,8 @@
 package error
 
-import "anchytec/error/constant"
+import "ts-error/err_code"
 
-var errMsgAssert = map[constant.ErrCodeSub]string{}
+var errMsgAssert = map[err_code.ErrCodeSub]string{}
 
 func AssertErrorSyncOrder(i ...interface{}) {
 	// TODO

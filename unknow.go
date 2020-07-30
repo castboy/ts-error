@@ -1,5 +1,5 @@
 package error
 
-import "anchytec/error/constant"
+import "ts-error/err_code"
 
-var errMsgUnknow = map[constant.ErrCodeSub]string{}
+var errMsgUnknow = map[err_code.ErrCodeSub]string{}

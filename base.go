@@ -1,14 +1,14 @@
 package error
 
 import (
-	"anchytec/error/constant"
 	"encoding/json"
+	"ts-error/err_code"
 )
 
 type baseErrer struct {
-	code       constant.ErrCode
-	codeSub    constant.ErrCodeSub
-	codeSubSub constant.ErrCodeSubSub
+	code       err_code.ErrCode
+	codeSub    err_code.ErrCodeSub
+	codeSubSub err_code.ErrCodeSubSub
 	originErr  error
 	callFunc   []string
 	comment    []Comment
@@ -24,7 +24,7 @@ func newErr() *baseErrer {
 	return res
 }
 
-func (me *baseErrer) init(errOrigin error, code constant.ErrCode, codeSub constant.ErrCodeSub, codeSubSub constant.ErrCodeSubSub, comment ...Comment) {
+func (me *baseErrer) init(errOrigin error, code err_code.ErrCode, codeSub err_code.ErrCodeSub, codeSubSub err_code.ErrCodeSubSub, comment ...Comment) {
 	me.setCode(code)
 	me.setCodeSub(codeSub)
 	me.setCodeSubSub(codeSubSub)
@@ -36,15 +36,15 @@ func (me *baseErrer) init(errOrigin error, code constant.ErrCode, codeSub consta
 	me.appendComment(comment...)
 }
 
-func (me *baseErrer) setCode(code constant.ErrCode) {
+func (me *baseErrer) setCode(code err_code.ErrCode) {
 	me.code = code
 }
 
-func (me *baseErrer) setCodeSub(sub constant.ErrCodeSub) {
+func (me *baseErrer) setCodeSub(sub err_code.ErrCodeSub) {
 	me.codeSub = sub
 }
 
-func (me *baseErrer) setCodeSubSub(subSub constant.ErrCodeSubSub) {
+func (me *baseErrer) setCodeSubSub(subSub err_code.ErrCodeSubSub) {
 	me.codeSubSub = subSub
 }
 
@@ -83,5 +83,5 @@ func (me *baseErrer) getOriginErr() error {
 }
 
 func (i *baseErrer) getErrCodeMsg() string {
-	return constant.ErrCodeMsg[i.code]
+	return err_code.ErrCodeMsg[i.code]
 }

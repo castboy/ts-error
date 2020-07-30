@@ -1,8 +1,8 @@
 package error
 
 import (
-	"anchytec/error/constant"
-	"anchytec/error/constant/mysql"
+	"ts-error/err_code"
+	"ts-error/err_code/mysql"
 )
 
 type MysqlErrer struct {
@@ -11,7 +11,7 @@ type MysqlErrer struct {
 
 func NewMysqlErrer(errOrigin error, opType mysql.MysqlOpType, opObj mysql.MysqlOpObj, comment ...Comment) *MysqlErrer {
 	base := newErr()
-	base.init(errOrigin, constant.MysqlErr, constant.ErrCodeSub(opType), constant.ErrCodeSubSub(opObj), comment...)
+	base.init(errOrigin, err_code.MysqlErr, err_code.ErrCodeSub(opType), err_code.ErrCodeSubSub(opObj), comment...)
 
 	return &MysqlErrer{base}
 }

@@ -1,8 +1,8 @@
 package error
 
 import (
-	"anchytec/error/constant"
-	"anchytec/error/constant/kafka"
+	"ts-error/err_code"
+	"ts-error/err_code/kafka"
 )
 
 type KafkaErrer struct {
@@ -11,7 +11,7 @@ type KafkaErrer struct {
 
 func NewKafkaErrer(errOrigin error, opType kafka.KafkaOpType, opObj kafka.KafkaOpObj, comment ...Comment) *KafkaErrer {
 	base := newErr()
-	base.init(errOrigin, constant.MysqlErr, constant.ErrCodeSub(opType), constant.ErrCodeSubSub(opObj), comment...)
+	base.init(errOrigin, err_code.MysqlErr, err_code.ErrCodeSub(opType), err_code.ErrCodeSubSub(opObj), comment...)
 
 	return &KafkaErrer{base}
 }
